@@ -18,8 +18,7 @@ I dropped the live albums belonging to these 7 artists due to the difference in 
 For the puropose of this project, I used the 13 [audio features](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/) that Spotify provides for every track through their API including acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence, key, mode, duration, time signature, 
 and tempo. At first glance, it appeared that enrgy, speechiness, and loudness were the most distinguishing features for each particular artist.
 
-![Energy](https://github.com/jcTTP3/spotify_project/blob/master/images/energy_eda..png) ![Speechiness](https://github.com/jcTTP3/spotify_project/blob/master/images/speechiness_eda.png) 
-![Loudness](https://github.com/jcTTP3/spotify_project/blob/master/images/loudness_eda.png) 
+![Energy](https://github.com/jcTTP3/spotify_project/blob/master/images/energy_eda..png) ![Speechiness](https://github.com/jcTTP3/spotify_project/blob/master/images/speechiness_eda.png) ![Loudness](https://github.com/jcTTP3/spotify_project/blob/master/images/loudness_eda.png) 
 
 Additionally, I hypothesized that intra-song variability could help differentiate the artists in my data set.  I built 6 different features to capture variability, including the number of sections in a given song, the average duration of each section, the standard deviation of the length of sections, the standard deviation of the loudness throughout a track, the standard deviation of the tempo throughout a track, an the total number of keys used throughout a track. Initially, the variability (std) of the loudness of a song stood out as a feature that may help to distinguish between the artists.
 
