@@ -46,6 +46,7 @@ Ultimately, the best model that yielded the best results was a Random Forest usi
 * min_samples_leaf: 5
 * min_samples_split: 5
 * n_estimators: 150
+
 This model achieved an overall accuracy score of 69% and the following f1 scores for each individual class:
 
 ![Model Results](https://github.com/jcTTP3/spotify_project/blob/master/images/model_results.png)
