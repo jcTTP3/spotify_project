@@ -18,7 +18,7 @@ I dropped the live albums belonging to these 7 artists due to the difference in 
 For the puropose of this project, I used the 13 [audio features](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/) that Spotify provides for every track through their API including acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence, key, mode, duration, time signature, 
 and tempo. At first glance, it appeared that enrgy, speechiness, and loudness were the most distinguishing features for each particular artist.
 
-|[Energy](/images/energy_eada..png)
+![Energy](/images/energy_eada..png)
 |[Speechiness](/images/speechiness_eada.png) 
 |[Loudness](/images/loudness_eada.png) 
 
