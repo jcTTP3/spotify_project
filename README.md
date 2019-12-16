@@ -13,6 +13,10 @@ Spotify provides artist, album, and track information that is available to the p
 
 I dropped the live albums belonging to these 7 artists due to the difference in sound profile between live and recorded music. Also, some of these artists (mostly The Rolling Stones, Fleetwood Mac, and Bruce Springsteen) have re-released versions of the same song. These duplicates were also dropped from the data set for modeling. Additionally, Jay-Z has one A-Cappella album which was also dropped for modeling purposes.
 
+Below is the final class distribution used for modeling
+
+![Songs per Artist] (https://github.com/jcTTP3/spotify_project/blob/master/images/class_distribution.png)
+
 ## Features
 
 For the puropose of this project, I used the 13 [audio features](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/) that Spotify provides for every track through their API including acousticness, danceability, energy, instrumentalness, liveness, loudness, speechiness, valence, key, mode, duration, time signature, 
@@ -22,7 +26,6 @@ and tempo. At first glance, it appeared that enrgy, speechiness, and loudness we
 
 Additionally, I hypothesized that intra-song variability could help differentiate the artists in my data set.  I built 6 different features to capture variability, including the number of sections in a given song, the average duration of each section, the standard deviation of the length of sections, the standard deviation of the loudness throughout a track, the standard deviation of the tempo throughout a track, an the total number of keys used throughout a track. Initially, the variability (std) of the loudness of a song stood out as a feature that may help to distinguish between the artists.
 
-INSERT PICTURE
 
 ## The Model
 
@@ -32,7 +35,8 @@ Given the class inbalance of my dataset, along with the number of classes I chos
 ### Baseline Model
 Using a dummy classifier with the stratified method of classification, that relies on the distribution of classes to make predictions, yielded a very overall accuracy rate and corresponding f1 scores for each class
 
-INSERT CONFUSION MATRIX FOR DUMMY AND CLASSIFICATION REPORT
+![Dummy Model Results] (https://github.com/jcTTP3/spotify_project/blob/master/images/dummy_results.png)
+![Dummy Confusion Matrix](https://github.com/jcTTP3/spotify_project/blob/master/images/dummy_confusion%20matrix.png)
 
 ### Final Model
 Ultimately, the best model that yielded the best results was a Random Forest using parameters optimized with GridSearch. Model Parameters:
@@ -44,15 +48,17 @@ Ultimately, the best model that yielded the best results was a Random Forest usi
 * n_estimators: 150
 This model achieved an overall accuracy score of 69% and the following f1 scores for each individual class:
 
-INSERT CONFUSION MATRIX AND CLASSIFICATION REPORT
+![Model Results] (https://github.com/jcTTP3/spotify_project/blob/master/images/model_results.png)
+![Confusion Matrix] (https://github.com/jcTTP3/spotify_project/blob/master/images/model_confusion_matrix.png)
 
 Overall, the model predicted most artists in the dataset with similar ability, besides two of the rappers in the dataset, Kanye West and Kendrick Lamar. As shown below, speechiness and loudness were the two most important features to distinguish between artists. 
 
-INSERT FEATURE IMPORTANCE GRAPHIC
+![Feature Importance] (https://github.com/jcTTP3/spotify_project/blob/master/images/feature_importance.png)
 
 Given that these were the two most important features and the underrepresentation of Kanye West and Kendrick Lamar in the dataset, it somewhat makes sense that the model mostly predicted these two's songs as Jay-Z. It is also somewhat encouraging that the model suggests that these artists' songs belong to another rapper, rather than a rock and roll artists used in the data set. 
 
-INSERT RAP FEATURES
+![Rap Loudness] (https://github.com/jcTTP3/spotify_project/blob/master/images/rap_loudness.png)
+![Rap Speechiness] (https://github.com/jcTTP3/spotify_project/blob/master/images/rap_speechiness.png)
 
 ## Other Methods Attempted
 Before settling on the optimized random forest, I attempted the following methods to achieve better classification results. Each had its own specific drawbacks.
