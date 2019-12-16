@@ -15,7 +15,7 @@ I dropped the live albums belonging to these 7 artists due to the difference in 
 
 Below is the final class distribution used for modeling
 
-![Songs per Artist] (https://github.com/jcTTP3/spotify_project/blob/master/images/class_distribution.png)
+![Songs per Artist](https://github.com/jcTTP3/spotify_project/blob/master/images/class_distribution.png)
 
 ## Features
 
@@ -35,7 +35,7 @@ Given the class inbalance of my dataset, along with the number of classes I chos
 ### Baseline Model
 Using a dummy classifier with the stratified method of classification, that relies on the distribution of classes to make predictions, yielded a very overall accuracy rate and corresponding f1 scores for each class
 
-![Dummy Model Results] (https://github.com/jcTTP3/spotify_project/blob/master/images/dummy_results.png)
+![Dummy Model Results](https://github.com/jcTTP3/spotify_project/blob/master/images/dummy_results.png)
 ![Dummy Confusion Matrix](https://github.com/jcTTP3/spotify_project/blob/master/images/dummy_confusion%20matrix.png)
 
 ### Final Model
@@ -48,17 +48,17 @@ Ultimately, the best model that yielded the best results was a Random Forest usi
 * n_estimators: 150
 This model achieved an overall accuracy score of 69% and the following f1 scores for each individual class:
 
-![Model Results] (https://github.com/jcTTP3/spotify_project/blob/master/images/model_results.png)
-![Confusion Matrix] (https://github.com/jcTTP3/spotify_project/blob/master/images/model_confusion_matrix.png)
+![Model Results](https://github.com/jcTTP3/spotify_project/blob/master/images/model_results.png)
+![Confusion Matrix](https://github.com/jcTTP3/spotify_project/blob/master/images/model_confusion_matrix.png)
 
 Overall, the model predicted most artists in the dataset with similar ability, besides two of the rappers in the dataset, Kanye West and Kendrick Lamar. As shown below, speechiness and loudness were the two most important features to distinguish between artists. 
 
-![Feature Importance] (https://github.com/jcTTP3/spotify_project/blob/master/images/feature_importance.png)
+![Feature Importance](https://github.com/jcTTP3/spotify_project/blob/master/images/feature_importance.png)
 
 Given that these were the two most important features and the underrepresentation of Kanye West and Kendrick Lamar in the dataset, it somewhat makes sense that the model mostly predicted these two's songs as Jay-Z. It is also somewhat encouraging that the model suggests that these artists' songs belong to another rapper, rather than a rock and roll artists used in the data set. 
 
-![Rap Loudness] (https://github.com/jcTTP3/spotify_project/blob/master/images/rap_loudness.png)
-![Rap Speechiness] (https://github.com/jcTTP3/spotify_project/blob/master/images/rap_speechiness.png)
+![Rap Loudness](https://github.com/jcTTP3/spotify_project/blob/master/images/rap_loudness.png)
+![Rap Speechiness](https://github.com/jcTTP3/spotify_project/blob/master/images/rap_speechiness.png)
 
 ## Other Methods Attempted
 Before settling on the optimized random forest, I attempted the following methods to achieve better classification results. Each had its own specific drawbacks.
